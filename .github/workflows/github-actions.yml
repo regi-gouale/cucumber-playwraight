@@ -13,3 +13,10 @@ jobs:
         run: npm install && npx playwright install-deps && npx playwright install
       - name: Run tests
         run: npm run test
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 3
