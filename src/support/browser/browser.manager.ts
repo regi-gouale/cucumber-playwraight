@@ -1,10 +1,9 @@
 import { LaunchOptions, chromium, firefox, webkit } from "@playwright/test";
 
-const options: LaunchOptions = {
-  headless: process.env.HEADLESS !== "false",
-};
-
 export const invokeBrowser = () => {
+  const options: LaunchOptions = {
+    headless: process.env.HEAD === "false",
+  };
   const browser = process.env.BROWSER || "chrome";
   switch (browser) {
     case "chrome":

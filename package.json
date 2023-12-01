@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "pretest": "npx ts-node ./src/support/report/init.ts",
-    "test": "cross-env ENV=prod FORCE_COLOR=0 cucumber-js --config=config/cucumber.js || true",
+    "test": "cross-env ENV=prod FORCE_COLOR=1 cucumber-js --config=config/cucumber.js || true",
     "posttest": "npx ts-node ./src/support/report/report.ts",
-    "test:failed": "cross-env ENV=prod FORCE_COLOR=0 cucumber-js --config=config/cucumber.js --format rerun:@rerun.txt || true"
+    "test:failed": "cross-env ENV=prod FORCE_COLOR=1 cucumber-js --config=config/cucumber.js --format rerun:@rerun.txt || true"
   },
   "keywords": [
     "cucumber-js",
